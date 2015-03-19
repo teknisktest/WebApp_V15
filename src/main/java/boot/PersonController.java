@@ -11,7 +11,10 @@ import org.springframework.web.servlet.ModelAndView;
 public class PersonController {
 	
 	@RequestMapping(value = "/person")
-	public String getPerson(){
+	public String getPerson(Model model){
+		model.addAttribute("name", "Ditt navn");
+		model.addAttribute("age", "Din alder");
+		model.addAttribute("food", "Din favorittmat");
 		
 		return "page";
 	}
